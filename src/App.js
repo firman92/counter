@@ -13,25 +13,19 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter />
-        <h1>Counter</h1>
-        <h2>{this.state.count}</h2>
-        <button
-          className="plus"
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          +
-        </button>
-        <button
-          className="moins"
-          onClick={() => {
-            this.setState({ count: this.state.count - 1 });
-          }}
-        >
-          -
-        </button>
+        <Counter
+          count={this.state.count}
+          increment={() =>
+            this.setState({
+              count: this.state.count + 1,
+            })
+          }
+          substract={() =>
+            this.setState({
+              count: this.state.count - 1,
+            })
+          }
+        />
       </div>
     );
   }
